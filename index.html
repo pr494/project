@@ -1,0 +1,666 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pharma</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C600%2C700%2C700italic%7COswald%3A400%2C300%7CVollkorn%3A400%2C400italic'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+  }
+  .carousel-indicators li {
+    border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+    background-color: #f4511e;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #f4511e; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #101010;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="margin-top: 4em;"> 
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a href="index.html"><img src="images/tc.png" alt = "logo of the site" class="logo" style="width:0.48em;"><h1 id="sitename" style="display:inline;font-family:cursive;color:rgb(172 172 172);">PHARMA</h1></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right" style="padding-top: 3.8em;">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="#category">Products</a></li>
+        <li><a href="#doctor">Doctor</a></li>
+        <li><a href="#contact">Contact</a></li>
+		<li><a href="login/index.php">Order</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<br>
+
+<!---------------------------------------------------------------slideshow------------------------------->
+<main class="main-content">
+  <section class="slideshow">
+    <div class="slideshow-inner">
+      <div class="slides">
+        <div class="slide is-active ">
+          <div class="slide-content">
+            <div class="caption">
+              <div class="title"></div>
+              <div class="text">
+                <p></p>
+              </div> 
+              
+            </div>
+          </div>
+          <div class="image-container"> 
+            <img src="images/main1.jpg" alt="" class="image" />
+          </div>
+        </div>
+		<div class="slide">
+          <div class="slide-content">
+            <div class="caption">
+              <div class="title"></div>
+              <div class="text">
+                <p></p>
+              </div> 
+              
+            </div>
+          </div>
+          <div class="image-container"> 
+            <img src="images/main2.jpg" alt="" class="image" />
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-content">
+            <div class="caption">
+              <div class="title"></div>
+              <div class="text">
+                <p></p>
+              </div> 
+              
+            </div>
+          </div>
+          <div class="image-container"> 
+            <img src="images/main3.jpg" alt="" class="image" />
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-content">
+            <div class="caption">
+              <div class="title"></div>
+              <div class="text">
+                <p></p>
+              </div> 
+              
+            </div>
+          </div>
+          <div class="image-container"> 
+            <img src="images/main4.jpg" alt="" class="image" />
+          </div>
+        </div>
+		<div class="slide">
+          <div class="slide-content">
+            <div class="caption">
+              <div class="title"></div>
+              <div class="text">
+                <p></p>
+              </div> 
+              <a href="https://forms.gle/cBGSRugmzXg7apEr7" target="_blank" class="btn">
+                <span class="btn-inner">Register Here</span>
+              </a>
+            </div>
+          </div>
+          <div class="image-container"> 
+            <img src="images/blood reg.jpg" alt="" class="image" />
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <div class="item is-active"> 
+          <span class="icon">1</span>
+        </div>
+        <div class="item">
+          <span class="icon">2</span>
+        </div>
+        <div class="item">
+          <span class="icon">3</span>
+        </div>
+        <div class="item">
+          <span class="icon">4</span>
+        </div>
+		<div class="item">
+          <span class="icon">5</span>
+        </div>
+      </div>
+      <div class="arrows">
+        <div class="arrow prev">
+          <span class="svg svg-arrow-left">
+            <svg version="1.1" id="svg4-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve"> <path d="M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z"/> </svg>
+            <span class="alt sr-only"></span>
+          </span>
+        </div>
+        <div class="arrow next">
+          <span class="svg svg-arrow-right">
+            <svg version="1.1" id="svg5-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve"> <path d="M1,0c0.256,0,0.512,0.098,0.707,0.293l12,12c0.391,0.391,0.391,1.023,0,1.414l-12,12c-0.391,0.391-1.023,0.391-1.414,0s-0.391-1.023,0-1.414L11.586,13L0.293,1.707c-0.391-0.391-0.391-1.023,0-1.414C0.488,0.098,0.744,0,1,0z"/> </svg>
+            <span class="alt sr-only"></span>
+          </span>
+        </div>
+      </div>
+    </div> 
+  </section>
+</main>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script>
+
+ 
+<script src="js/myscript.js"></script>
+
+<marquee behavior="scroll" direction="left"  >Masks are a key measure to suppress transmission and save lives. Masks should be used as part of a comprehensive ‘Do it all!’ approach including physical distancing, avoiding crowded, closed and close-contact settings, good ventilation, cleaning hands, covering sneezes and coughs, and more.</marquee>
+
+<!----------------------- Container (About Section) --------------------------->
+<div id="about" class="container-fluid" >
+  <div class="row">
+    <div class="col-sm-8">
+	
+      <h2>About Pharma</h2><br>
+      <h4>Pharma is India’s Largest Online medical store where you can shop for quality online medicines, wellness products, and book online lab tests. Get all your healthcare products and medicines online at your fingertips. Easy isn’t it? Well, here is what we have to offer for you and your wellbeing.</h4><br>
+      <p>We work with a mission to provide best-in-class medical services and offer affordable access to healthcare to the masses. We take pride in being obsessed with health and ascertain that every step that our users take is towards preventive care.Order online medicine in Bangalore, Delhi, Mumbai, Chennai, Hyderabad, Pune, Jaipur, Ahmedabad, Kolkata, Patna, Indore, Bhubaneshwar, Noida, Chandigarh, Gurgaon, Agra, Guwahati and more.</p>
+      <br><a href="#"><button class="btn btn-default btn-lg" style="color: #330505;border-color: #544f48;">Get in Touch</button></a>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-signal logo"></span>
+    </div>
+  </div>
+</div>
+
+
+<!------------------ Container (Services Section) ------------------------------------------------>
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-ok-sign logo-small"></span>
+      <h4>Genuine Medicines</h4>
+      
+    </div>
+	<div class="col-sm-4">
+      <span class="glyphicon glyphicon-tint logo-small"></span>
+      <h4>Blood Bank</h4>
+      
+    </div>
+    
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-user logo-small"></span>
+      <h4 style="color:#303030;">Doctor Cunsultation</h4>
+      
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+  <div class="col-sm-4">
+      <span class="glyphicon glyphicon-time logo-small"></span>
+      <h4>Timely Delivery</h4>
+      
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-shopping-cart logo-small"></span>
+      <h4>Online Pharmacy</h4>
+      
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-repeat logo-small"></span>
+      <h4>Easy Returns and Refunds</h4>
+      
+    </div>
+    
+  </div>
+</div>
+
+<!------------------------------ Shop By Health Condition ----------------------------->
+<div id="category" class="container-fluid text-center bg-grey">
+<div id="myCarouse1" class="container-fluid text-center bg-grey">
+  <h2>Shop By Health Condition</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <div class="caption">
+              <div class="title"><b>CARDIC CARE</b></div>
+        </div>
+        <a href="Login/Shop/cardiac/index.php"><img src="images/cardiac.jpg" alt="" class="image" /></a>
+        
+      </div>
+      <div class="item">
+		<div class="caption">
+              <div class="title"><b>DIABETIC CARE</b></div>
+        </div>
+        <a href="Login/Shop/diabetic/index.php"><img src="images/diabetic.jpg" alt="" class="image" /></a>
+      </div>
+      <div class="item">
+		<div class="caption">
+              <div class="title"><b>ORTHO CARE</b></div>
+        </div>
+        <a href="Login/Shop/ortho/index.php"><img src="images/ortho.jpg" alt="" class="image" /></a>
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <br>
+  </br>
+      <!------------------ Shop By Category ------------------------->
+  <h2>Shop By Category</h2>
+  <div id="myCarouse2" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarouse2" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarouse2" data-slide-to="1"></li>
+      <li data-target="#myCarouse2" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <div class="caption">
+              <div class="title"><b>COVID ESSENTIALS</b></div>
+        </div>
+        <a href="Login/Shop/covid/index.php" ><img src="images/covid.jpeg" alt="" class="image" /></a>
+        
+      </div>
+      <div class="item">
+		<div class="caption">
+              <div class="title"><b>DEVICES AND ACCESSORIES</b></div>
+        </div>
+        <a href="Login/Shop/devices/index.php" ><img src="images/ns.jpeg" alt="" class="image" /></a>
+      </div>
+      <div class="item">
+		<div class="caption">
+              <div class="title"><b>AYURVEDIC PRODUCTS</b></div>
+        </div>
+        <a href="Login/Shop/ayurvedic/index.php" ><img src="images/aru.jpeg" alt="" class="image" /></a>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarouse2" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarouse2" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+
+  <h2>Health Articles</h2><br>
+ <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="images/Diabetes.jpg" alt="OAS" width="400" height="300">
+        <p><strong>Diabetes Mellitus: Types, Risk Factors, Symptoms, Treatments</strong></p>
+		
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="images/9.jpg" alt="SMS" width="400" height="300">
+        <p><strong>9 Early Warning Signs And Symptoms Of Type 2 Diabetes</strong></p>
+		<bbtn-default btn-lg" style="color: #330505;border-color: #544f48;"><H6>click to know more</H6></button></a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="images/bestdia.jpg" alt="SMS" width="400" height="300">
+        <p><strong>The Best Diabetes-Friendly Diets to Help You Lose Weight</strong></p>
+		
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container (Portfolio Section) -->
+<div id="doctor" class="container-fluid text-center bg-grey">
+  <h2>Doctor Consultation</h2><br>
+	<div class="col-sm-7 slideanim">
+		<img src="images/doc.png" alt="" class="image" />
+		<form id="feedback" action="https://formspree.io/f/xknkwbez" method="post">
+		
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="Problem" name="Problem" placeholder="Describe your problem" rows="5"></textarea><br>
+	  <textarea class="form-control" id="address" name="address" placeholder="Your Complete Address" rows="2"></textarea><br>
+	  <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="age" name="age" placeholder="Age" type="number" required>
+        </div>
+        <div class="col-sm-6 form-group">
+			<div class="col-sm-6 form-group">
+			<input type="radio" id="male" name="gender" value="male">
+			<label for="male">Male</label><br>
+			</div>
+			<div class="col-sm-6 form-group">
+			<input type="radio" id="female" name="gender" value="female">
+			<label for="female">Female</label><br>
+			</div>
+			
+        </div>
+      </div>
+	  <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="phone" name="phone" placeholder="Phone" type="tel" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="phone" name="phone" placeholder="Alternative Contact" type="tel" required>
+        </div>
+		<div class="col-sm-6 form-group">
+		 <input type="file" id="myFile" name="File">
+		 </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit" value="Send" style="color:black;">Send</button>
+        </div>
+      </div>
+	 
+	  </form>
+	  
+	  <br />
+    </div>
+	
+</div> 
+<!-- Image of location/map -->
+<div class="mapouter">
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-red">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+	  
+	  <div class="box">
+                </div>
+      <div class="box">
+                    <div class="icon">
+                        <a href = "####"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="text">
+                    </div>
+                </div>
+      
+    </div>
+	
+    <div class="col-sm-7 slideanim">
+		<form id="feedback" action="https://formspree.io/f/mpzkpakd" method="post">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit" value="Send" style="color:black;">Send</button>
+        </div>
+      </div>
+	  </form>
+	  <br />
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Copyright © 2021 All rights reserved to <b>ABCD</b></p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+
